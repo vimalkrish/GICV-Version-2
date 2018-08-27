@@ -46,7 +46,7 @@ protocol = {{ keyOrDefault "sample_configuration/master/grafana/protocol" "http"
 # The full public facing url you use in browser, used for redirects and emails
 # If you use reverse proxy and sub path specify full url (with sub path)
 ;root_url = http://localhost:3000
-
+root_url = {{ keyOrDefault "sample_configuration/master/grafana/root_url" "http://localhost:3000" }}
 # Log web requests
 ;router_logging = false
 
@@ -369,7 +369,8 @@ default_theme = {{ keyOrDefault "sample_configuration/master/grafana/default_the
 [dashboards.json]
 ;enabled = false
 ;path = /var/lib/grafana/dashboards
-
+enabled = {{ keyOrDefault "sample_configuration/master/grafana/dashboard_enabled" "true" }}
+path = {{ keyOrDefault "sample_configuration/master/grafana/dashboard_path" "/var/lib/grafana/dashboards" }}
 #################################### Alerting ############################
 [alerting]
 # Disable alerting engine & UI features
