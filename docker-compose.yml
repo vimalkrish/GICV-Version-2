@@ -1,0 +1,54 @@
+version: '3.2'
+
+services:
+  myvault:
+    image: vault
+    container_name: myvault
+    ports:
+      - "127.0.0.1:8200:8200"
+    env_file: configuration.env
+    volumes:
+      - ./vault/file:/vault/file:rw
+      - ./vault/config:/vault/config:rw
+    cap_add:
+      - IPC_LOCK
+    entrypoint: vault server -config=/vault/config/vault.json
+  influxdb:
+    build: influxdb
+    env_file: configuration.env
+    ports:
+      - '8086:8086'
+    volumes:
+      - influxdb_data:/var/lib/influxdb
+  consul:
+    image: "consul"
+    hostname: "consul"
+    command: agent -server -bind 0.0.0.0 -client 0.0.0.0 -bootstrap-expect=1 
+    ports:
+      - "8400:8400"
+      - "8500:8500"
+      - "8600:53/udp"
+    volumes:
+      - ./consul/config:/consul/config
+  grafana:
+    build: grafana
+    env_file: configuration.env
+    links:
+      - influxdb
+    ports:
+      - '3000:3000'
+      - '80:80'
+      - '443:443'
+    volumes:
+      - grafana_data:/var/lib/grafana
+  git2consul:
+    image: cimpress/git2consul
+    depends_on:
+      - consul
+    container_name: git2consul
+    volumes:
+      - ./config/git2consul:/config
+    command: --endpoint consul --config-file /config/git2consul.json
+volumes:
+  grafana_data: {}
+  influxdb_data: {}

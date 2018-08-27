@@ -1,0 +1,14 @@
+{
+  "datacenter": "dc1",
+  "log_level": "DEBUG",
+  "server": true,
+  "ui" : true,
+  "ports": {
+    "dns": 8600,
+    "http": 8500,
+    "https": 0,
+    "serf_lan": 8401,
+    "serf_wan": 8402,
+    "server": 8400
+  }
+}
