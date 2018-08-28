@@ -92,8 +92,8 @@ Consul is a distributed service mesh to connect, secure, and configure services 
 In this project consul container is used for configuration management and KV
 
 Create the directory /consul/config/
-Create the configuration file
-/consul/config/config.json
+
+Create the configuration file /consul/config/config.json
 
 --------------------------------------------------------------------
 
@@ -104,6 +104,7 @@ It is to store secures, stores, and tightly controls access to tokens, passwords
 Our Grafana secrets are stored in vault container
 
 Used file backed storage /vault/file
+
 Configuration File /vault/config/vault.json
 
 Update the configuration file 
@@ -134,6 +135,7 @@ Configuration file -> /etc/supervisor/conf.d/supervisord.conf
 
 
 Consul-template command
+
 #/bin/consul-template -consul-addr 'consul:8500' -template '/etc/grafana/grafana.ini.ctmpl:/etc/grafana/grafana.ini'
 
 --------------------------------------------------------------------
@@ -153,6 +155,7 @@ database=influx
 
 Troubleshooting:
 If the git2consul container is not up, please run "docker-compose up -d" once again to bring it up
+
 I have tried this task in Mac Laptop Docker engine, please use "localhost" for all configurations
 
 
