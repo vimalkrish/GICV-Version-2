@@ -11,8 +11,11 @@ Git2consul Repo: https://github.com/vimalkrish/git2consul_data
 To start the docker containers
 
 Clone the git repository
+
 #Git clone git@github.com:vimalkrish/GICV-Version-2.git
+
 #cd GICV-Version-2/grafana
+
 #docker compose up -d
 
 Now you can see 5 container running
@@ -23,6 +26,7 @@ Now you can see 5 container running
 5 – git2consul
 
 Check all the services are started
+
 #docker ps
 
 Applications:
@@ -46,17 +50,21 @@ Login to vault container and initialize it
 # vault operator init
 
 Unseal the vault with three keys
+
 # vault operator unseal
 # vault operator unseal
 # vault operator unseal
 
 Initialize root token
+
 # vault login
 
 From the host environment (i.e. outside of the docker image):
+
 # alias vault='docker exec -it CONTAINER ID vault "$@"'
 
 Read the grafana secrets
+
 # vault read secret/grafana
 
 --------------------------------------------------------------------
