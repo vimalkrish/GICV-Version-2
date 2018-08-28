@@ -32,6 +32,11 @@ WORKDIR /app
 COPY entrypoint.sh ./
 RUN chmod u+x entrypoint.sh
 
+WORKDIR /app
+COPY dashboard.json ./
+COPY add_dashboard.sh ./
+RUN chmod u+x add_dashboard.sh
+
 ENTRYPOINT ["/usr/bin/supervisord"]
 
 
