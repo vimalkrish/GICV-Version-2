@@ -46,18 +46,23 @@ Unseal Key 5: AyHJKldJfziPiYULVtmeAyy3VqBeZoZBF1qr9XI3KrvT
 Initial Root Token: 533a50d5-b0b2-f98e-c2d2-d94217de977e
 
 Login to vault container and initialize it
+
 #vault init
 
 Unseal Vault using 3 keys
+
 #vault operator unseal
 #vault operator unseal
 #vault operator unseal
 
 Init the root token
+
 #vault login
 
 From the host environment (i.e. outside of the docker image):
+
 #alias vault='docker exec -it CONTAINER-ID vault "$@"'
+
 #vault read secret/grafana
 
 
