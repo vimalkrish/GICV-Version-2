@@ -192,4 +192,9 @@ If the git2consul container is not up, please run "docker-compose up -d" once ag
 I have tried this task in Mac Laptop Docker engine, please use "localhost" for all configurations
 
 
+--------------------------------------------------------------------
+
+Enabled Https:
+
+
 
