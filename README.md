@@ -38,9 +38,13 @@ Vault Server: 127.0.0.1 port: 8200
 Vault key and Token
 
 Unseal Key 1: 59FY/8cK6psyRFtsywxINKfGlvod7Nzl4YXeY8IDABJx
+
 Unseal Key 2: KQv6dfT6zHxix9wgz3YxWBdgRAXdfeoiz6pigh8qNmdZ
+
 Unseal Key 3: HLZtZ004U19s6gy3h1gBxWZUDLUTDqN4/5H0MkM1LibO
+
 Unseal Key 4: XDy2vhx6P1oE3bKD416bV5hxWfvMmw6jUpmvLWVzJ/nK
+
 Unseal Key 5: AyHJKldJfziPiYULVtmeAyy3VqBeZoZBF1qr9XI3KrvT
 
 Initial Root Token: 533a50d5-b0b2-f98e-c2d2-d94217de977e
@@ -52,7 +56,9 @@ Login to vault container and initialize it
 Unseal Vault using 3 keys
 
 #vault operator unseal
+
 #vault operator unseal
+
 #vault operator unseal
 
 Init the root token
@@ -73,6 +79,7 @@ Telegraf
 Install telegraf in local laptop and send the metrics to InfluxDB
 
 Command to Install in MAC
+
 brew install telegraf
 
 update the configuration file /usr/local/etc/telegraf.conf
@@ -124,13 +131,17 @@ Template file /etc/Grafana/“grafana.ini.ctmpl”
 Used Nginx for SSL 
 
 /etc/nginx
+
 /etc/nginx/sites-enabled/default
+
 Certificates stored in 
+
 / etc/nginx/cert.crt
 /etc/nginx/cert.key
 
-Supervisor
+Supervisor -
 Used supervisor to run the services
+
 Configuration file -> /etc/supervisor/conf.d/supervisord.conf
 
 
@@ -154,6 +165,7 @@ database=influx
 --------------------------------------------------------------------
 
 Troubleshooting:
+
 If the git2consul container is not up, please run "docker-compose up -d" once again to bring it up
 
 I have tried this task in Mac Laptop Docker engine, please use "localhost" for all configurations
