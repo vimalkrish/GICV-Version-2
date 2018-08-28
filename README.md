@@ -7,12 +7,33 @@ Docker Code Repo: https://github.com/vimalkrish/GICV-Version-2
 
 Git2consul Repo: https://github.com/vimalkrish/git2consul_data
 
+Grafana login stored in Vault
+
+Grafana Login:
+
+https://127.0.0.1
+
+user: admin
+
+password: admin
+
+-----------------
+
+InfluxDB database
+
+Database: influx
+
+User: admin
+
+Password: admin
+
+------------------
 
 To start the docker containers
 
 Clone the git repository
 
-#Git clone git@github.com:vimalkrish/GICV-Version-2.git
+#git clone git@github.com:vimalkrish/GICV-Version-2.git
 
 #cd GICV-Version-2/grafana
 
