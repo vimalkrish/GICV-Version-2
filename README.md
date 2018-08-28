@@ -7,6 +7,20 @@ Docker Code Repo: https://github.com/vimalkrish/GICV-Version-2
 
 Git2consul Repo: https://github.com/vimalkrish/git2consul_data
 
+
+*Enabled Https for Grafana
+
+*disabled grafana Signup
+
+*Created dashboard via JSON file
+
+*Manage Grafana Configuration in Consul using Consul-template
+
+*Manage Consul Key/Value in git2consul 
+
+*store the secret keys in Vault
+
+
 Grafana login stored in Vault
 
 Grafana Login:
@@ -194,7 +208,7 @@ I have tried this task in Mac Laptop Docker engine, please use "localhost" for a
 
 --------------------------------------------------------------------
 
-Enabled Https:
+ 
 
 
 
